@@ -25,5 +25,11 @@
                 greeting: 'Hello World!',
             };
         },
+
+        mounted() {
+            setTimeout(() => {
+                this.greeting = 'Hello Vue!';
+            }, 4000);
+        },
     };
 </script>
