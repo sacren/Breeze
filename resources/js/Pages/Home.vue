@@ -3,8 +3,13 @@
     <div>
         <h1>Home</h1>
     </div>
+    <p>
+        <input type="text" v-model="greeting">
+    </p>
 
-    {{ greeting }}
+    <p>
+        {{ greeting }} ({{ greeting.length }})
+    </p>
 </template>
 
 <script>
