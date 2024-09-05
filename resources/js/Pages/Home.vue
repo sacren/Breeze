@@ -1,15 +1,14 @@
 <template>
     <Head title="Home Page" />
-    <div>
-        <h1>Home</h1>
-    </div>
-    <p>
-        <input type="text" v-model="greeting">
-    </p>
+        <div class="flex flex-col justify-center items-center min-h-screen">
+            <p class="flex justify-center">
+            <input type="text" v-model="greeting" class="text-center border-green-500 border-2">
+            </p>
 
-    <p>
-        {{ greeting }} ({{ greeting.length }})
-    </p>
+            <p class="flex justify-center mt-4">
+            {{ greeting }} ({{ greeting.length }})
+            </p>
+        </div>
 </template>
 
 <script>
