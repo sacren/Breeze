@@ -10,7 +10,7 @@
             </p>
 
             <div class="flex justify-center mt-4">
-                <button v-bind:class="buttonUtils">Click me</button>
+                <button v-bind:class="buttonUtils" v-on:click="changeColor">Click me</button>
             </div>
         </div>
 </template>
@@ -34,6 +34,12 @@
             setTimeout(() => {
                 this.greeting = 'Hello Vue!';
             }, 4000);
+        },
+
+        methods: {
+            changeColor() {
+                this.buttonUtils = 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded';
+            },
         },
     };
 </script>
