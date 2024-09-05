@@ -10,7 +10,7 @@
             </p>
 
             <div class="flex justify-center mt-4">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Click me</button>
+                <button v-bind:class="buttonUtils">Click me</button>
             </div>
         </div>
 </template>
@@ -26,6 +26,7 @@
         data() {
             return {
                 greeting: 'Hello World!',
+                buttonUtils: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
             };
         },
 
