@@ -3,7 +3,7 @@
 
     <div class="flex flex-col justify-center items-center min-h-screen">
         <div class="flex justify-center mt-4">
-            <button v-bind:class="active ? buttonOn : buttonOff" v-on:click="toggle">Click me</button>
+            <button :class="active ? buttonOn : buttonOff" @click="toggle">Click me</button>
         </div>
     </div>
 </template>
