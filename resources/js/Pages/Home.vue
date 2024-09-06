@@ -10,7 +10,7 @@
             </p>
 
             <div class="flex justify-center mt-4">
-                <button v-bind:class="buttonUtils" v-on:click="changeColor">Click me</button>
+                <button v-bind:class="active ? buttonOn : buttonOff" v-on:click="toggle">Click me</button>
             </div>
         </div>
 </template>
@@ -26,7 +26,9 @@
         data() {
             return {
                 greeting: 'Hello World!',
-                buttonUtils: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
+                buttonOff: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
+                buttonOn: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded',
+                active: false,
             };
         },
 
@@ -37,8 +39,8 @@
         },
 
         methods: {
-            changeColor() {
-                this.buttonUtils = 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded';
+            toggle() {
+                this.active = !this.active;
             },
         },
     };
