@@ -1,18 +1,5 @@
 <template>
     <Head title="Home Page" />
-        <div class="flex flex-col justify-center items-center min-h-screen">
-            <p class="flex justify-center">
-            <input type="text" v-model="greeting" class="text-center border-green-500 border-2">
-            </p>
-
-            <p class="flex justify-center mt-4">
-            {{ greeting }} ({{ greeting.length }})
-            </p>
-
-            <div class="flex justify-center mt-4">
-                <button v-bind:class="active ? buttonOn : buttonOff" v-on:click="toggle">Click me</button>
-            </div>
-        </div>
 </template>
 
 <script>
@@ -21,27 +8,6 @@
     export default {
         components: {
             Head,
-        },
-
-        data() {
-            return {
-                greeting: 'Hello World!',
-                buttonOff: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
-                buttonOn: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded',
-                active: false,
-            };
-        },
-
-        mounted() {
-            setTimeout(() => {
-                this.greeting = 'Hello Vue!';
-            }, 4000);
-        },
-
-        methods: {
-            toggle() {
-                this.active = !this.active;
-            },
         },
     };
 </script>
