@@ -2,8 +2,12 @@
     <div class="min-h-screen grid place-content-center">
         <h2 class="mb-2 font-bold">Procedures</h2>
         <ul>
-            <li v-for="p in procedures">{{ p.name }} <input type="checkbox"></li>
+            <li v-for="p in procedures">
+                {{ p.name }}
+                <input type="checkbox" v-model="p.checked">
+            </li>
         </ul>
+        <pre>{{ procedures }}</pre>
     </div>
 </template>
 
@@ -12,10 +16,10 @@ export default {
     data() {
         return {
             procedures: [
-                { name: 'Patch kernel' },
-                { name: 'Update systemd' },
-                { name: 'Run docker' },
-                { name: 'Install Laravel' },
+                { name: 'Patch kernel', checked: false },
+                { name: 'Update systemd', checked: false },
+                { name: 'Run docker', checked: false },
+                { name: 'Install Laravel', checked: false },
             ],
         };
     },
