@@ -3,8 +3,10 @@
         <h2 class="mb-2 font-bold">Procedures</h2>
         <ul>
             <li v-for="p in procedures">
-                {{ p.name }}
-                <input type="checkbox" v-model="p.checked">
+                <label>
+                    {{ p.name }}
+                    <input type="checkbox" v-model="p.checked">
+                </label>
             </li>
         </ul>
         <pre>{{ procedures }}</pre>
