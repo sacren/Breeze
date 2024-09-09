@@ -1,9 +1,9 @@
 <template>
     <div class="min-h-screen grid place-content-center">
-        <h2 v-show="jobs.filter(a => !a.status).length" class="mb-2 font-bold">To Do</h2>
+        <h2 v-show="todo.length" class="mb-2 font-bold">To Do</h2>
         <ul>
             <li
-                v-for="job in jobs.filter(a => !a.status)"
+                v-for="job in todo"
                 :key="job.id">
 
                 <label>
@@ -13,10 +13,10 @@
             </li>
         </ul>
 
-        <h2 v-show="jobs.filter(a => a.status).length" class="mt-8 mb-2 font-bold">Completed</h2>
+        <h2 v-show="completed.length" class="mt-8 mb-2 font-bold">Completed</h2>
         <ul>
             <li
-                v-for="job in jobs.filter(a => a.status)"
+                v-for="job in completed"
                 :key="job.id">
 
                 <label>
@@ -39,6 +39,16 @@ export default {
                 { name: 'Install Laravel', status: false, id: 4 },
             ],
         };
+    },
+
+    computed: {
+        todo() {
+            return this.jobs.filter(a => !a.status);
+        },
+
+        completed() {
+            return this.jobs.filter(a => a.status);
+        },
     },
 };
 </script>
