@@ -1,17 +1,15 @@
 <template>
     <div class="min-h-screen grid place-content-center">
-        <app-button></app-button>
+        <app-button>Click me</app-button>
     </div>
 </template>
 
 <script>
-export default {
-    components: {
-        'app-button': {
-            mounted() {
-                alert('Hello Vue!');
-            },
+    import PrimaryButton from '@/Components/PrimaryButton.vue';
+
+    export default {
+        components: {
+            'app-button': PrimaryButton,
         },
-    },
-};
+    };
 </script>
