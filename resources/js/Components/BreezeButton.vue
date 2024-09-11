@@ -8,6 +8,10 @@
 
 <script>
     export default {
+        props: {
+            type: String,
+        },
+
         data() {
             return {
                 processing: true,
