@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen grid place-content-center">
-        <app-button>Click me</app-button>
+        <app-button type="secondary">Click me</app-button>
     </div>
 </template>
 
