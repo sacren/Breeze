@@ -5,6 +5,7 @@
              'bg-green-800': type === 'primary',
              'bg-red-800': type === 'secondary',
              'bg-blue-800': type === 'muted',
+             'is-loading': processing,
              }" :disabled="processing">
         <slot />
     </button>
