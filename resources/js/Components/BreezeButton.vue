@@ -17,12 +17,11 @@
                 type: String,
                 default: 'primary',
             },
-        },
 
-        data() {
-            return {
-                processing: true,
-            };
+            processing: {
+                type: Boolean,
+                default: false,
+            },
         },
     };
 </script>
