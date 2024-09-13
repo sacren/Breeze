@@ -1,7 +1,7 @@
 <template>
     <Head title="String" />
 
-    <div class="flex flex-col justify-center items-center min-h-screen">
+    <div class="min-h-screen grid place-content-center">
         <p class="flex justify-center">
         <input type="text" v-model="greeting" class="text-center border-green-500 border-2">
         </p>

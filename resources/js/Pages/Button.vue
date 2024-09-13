@@ -1,10 +1,8 @@
 <template>
     <Head title="Button" />
 
-    <div class="flex flex-col justify-center items-center min-h-screen">
-        <div class="flex justify-center mt-4">
-            <button :class="active ? buttonOn : buttonOff" @click="toggle">Click me</button>
-        </div>
+    <div class="min-h-screen grid place-content-center">
+        <button :class="active ? buttonOn : buttonOff" @click="toggle">Click me</button>
     </div>
 </template>
 
