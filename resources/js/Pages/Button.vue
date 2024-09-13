@@ -2,7 +2,7 @@
     <Head title="Button" />
 
     <div class="min-h-screen grid place-content-center">
-        <button :class="active ? buttonOn : buttonOff" @click="toggle">Click me</button>
+        <button :class="active ? on : off" @click="flip">Click me</button>
     </div>
 </template>
 
@@ -15,15 +15,17 @@
         },
 
         data() {
+            const common = 'hover:bg-blue-700 text-white font-bold py-2 px-4 rounded';
+
             return {
-                buttonOff: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
-                buttonOn: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded',
+                on: `bg-red-500 ${common}`,
+                off: `bg-blue-500 ${common}`,
                 active: false,
             };
         },
 
         methods: {
-            toggle() {
+            flip() {
                 this.active = !this.active;
             },
         },
