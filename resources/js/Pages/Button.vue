@@ -3,7 +3,7 @@
 
     <div class="min-h-screen grid place-content-center">
         <button :class="active ? on : off" @click="flip">
-            {{ active ? 'Republican' : 'Democrat' }}
+            {{ getParty }}
         </button>
     </div>
 </template>
@@ -29,6 +29,12 @@
         methods: {
             flip() {
                 this.active = !this.active;
+            },
+        },
+
+        computed: {
+            getParty() {
+                return this.active ? 'Republican' : 'Democrat';
             },
         },
     };
