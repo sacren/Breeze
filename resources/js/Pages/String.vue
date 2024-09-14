@@ -3,7 +3,11 @@
 
     <div class="min-h-screen grid place-content-center">
         <p class="flex justify-center">
-        <input type="text" v-model="greeting" class="text-center border-green-500 border-2">
+        <input
+                name="greeting"
+                type="text"
+                class="text-center border-green-500 border-2"
+                v-model="greeting">
         </p>
 
         <p class="flex justify-center mt-4">
