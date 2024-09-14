@@ -2,7 +2,9 @@
     <Head title="Button" />
 
     <div class="min-h-screen grid place-content-center">
-        <button :class="active ? on : off" @click="flip">Click me</button>
+        <button :class="active ? on : off" @click="flip">
+            {{ active ? 'Republican' : 'Democrat' }}
+        </button>
     </div>
 </template>
 
@@ -15,7 +17,7 @@
         },
 
         data() {
-            const common = 'hover:bg-blue-700 text-white font-bold py-2 px-4 rounded';
+            const common = 'text-white font-bold py-2 px-4 rounded';
 
             return {
                 on: `bg-red-500 ${common}`,
