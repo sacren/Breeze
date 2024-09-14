@@ -8,7 +8,10 @@
 
                 <label>
                     {{ job.name }}
-                    <input type="checkbox" v-model="job.status">
+                    <input
+                            name="todo"
+                            type="checkbox"
+                            v-model="job.status">
                 </label>
             </li>
         </ul>
@@ -21,7 +24,10 @@
 
                 <label>
                     {{ job.name }}
-                    <input type="checkbox" v-model="job.status">
+                    <input
+                            name="completed"
+                            type="checkbox"
+                            v-model="job.status">
                 </label>
             </li>
         </ul>
