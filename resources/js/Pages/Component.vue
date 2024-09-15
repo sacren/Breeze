@@ -5,11 +5,11 @@
 </template>
 
 <script>
-    import BreezeButton from '@/Components/BreezeButton.vue';
+    import AppButton from '@/Components/AppButton.vue';
 
     export default {
         components: {
-            'app-button': BreezeButton,
+            'app-button': AppButton,
         },
     };
 </script>
