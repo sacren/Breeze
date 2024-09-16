@@ -1,18 +1,16 @@
 <template>
-    <Head title="Applist" />
-    <div>
-        <AllJobs />
-    </div>
+    <Head title="Applist"></Head>
+    <AllOver></AllOver>
 </template>
 
 <script>
     import { Head } from '@inertiajs/vue3';
-    import AllJobs from '@/Components/AllJobs.vue';
+    import AllOver from '@/Components/AllJobs.vue';
 
     export default {
         components: {
             Head,
-            AllJobs,
+            AllOver,
         },
     };
 </script>
