@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen grid place-content-center">
         <JobList
-            :jobList="todo"
+            :jobList="filtered.todo"
             listName="To Do"
             fieldName="todo"
         />
@@ -9,7 +9,7 @@
         <div class="mt-8"></div>
 
         <JobList
-            :jobList="completed"
+            :jobList="filtered.completed"
             listName="Completed"
             fieldName="completed"
         />
@@ -36,12 +36,11 @@
         },
 
         computed: {
-            todo() {
-                return this.allJobs.filter(a => !a.status);
-            },
-
-            completed() {
-                return this.allJobs.filter(a => a.status);
+            filtered() {
+                return {
+                    todo: this.allJobs.filter(a => !a.status),
+                    completed: this.allJobs.filter(a => a.status),
+                };
             },
         },
     };
