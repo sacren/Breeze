@@ -6,7 +6,7 @@
             fieldName="todo"
         />
 
-        <div class="mt-8"></div>
+        <div v-if="filtered.todo.length && filtered.completed.length" class="mt-8"></div>
 
         <JobList
             :jobList="filtered.completed"
