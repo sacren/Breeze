@@ -1,4 +1,19 @@
-<x-layout></x-layout>
+<x-layout>
+  <h1>
+    <?php echo 'Hello World!'; ?>
+    <?= 'Hello World!' // shorthand without echo and ; ?>
+    <?php
+    // full version for business logic
+    $tmp1 = 1;
+    $tmp2 = 2;
+    echo $tmp1 . ', ' . $tmp2;
+    ?>
+  </h1>
+  <?php
+  // not good idea to mix with HTML tags
+  echo '<p>' . $tmp1 . ', ' . $tmp2 . '</p>';
+  ?>
+</x-layout>
 <?php
 
 echo 'Hello World!';
