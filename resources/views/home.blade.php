@@ -22,3 +22,35 @@ echo 'Hello', ' ', 'World!';
 // Escape single quotes or use double quotes.
 echo 'What\'s up?';
 echo "What's up?";
+
+/* Use varibles.
+ *
+ * These are wrong:
+ * $123name;
+ * $n@ame;
+ */
+$name = 'World';
+echo $name;
+echo '$name';
+echo "$name";
+echo "Hello $name!";
+echo "Hello {$name}!";
+echo 'Hello' . ' ' . $name . '!';
+
+// Use underscores.
+$_name = 'World';
+$_123name = 'World';
+echo $_name;
+echo $_123name;
+
+// Assign by value.
+$tmp1 = 1;
+$tmp2 = $tmp1;
+$tmp1 = 2;
+echo $tmp2; // 1
+
+// Assign by reference.
+$tmp1 = 1;
+$tmp2 = &$tmp1;
+$tmp1 = 2;
+echo $tmp2; // 2
