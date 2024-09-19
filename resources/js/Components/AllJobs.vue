@@ -1,18 +1,20 @@
 <template>
-    <div class="min-h-screen grid place-content-center">
-        <JobList
-            :jobList="filtered.todo"
-            listName="To Do"
-            fieldName="todo"
-        />
+    <div class="grid place-content-center min-h-screen space-y-8">
+        <section v-show="filtered.todo.length">
+            <JobList
+                    :jobList="filtered.todo"
+                    listName="To Do"
+                    fieldName="todo">
+            </JobList>
+        </section>
 
-        <div v-if="filtered.todo.length && filtered.completed.length" class="mt-8"></div>
-
-        <JobList
-            :jobList="filtered.completed"
-            listName="Completed"
-            fieldName="completed"
-        />
+        <section v-show="filtered.completed.length">
+            <JobList
+                    :jobList="filtered.completed"
+                    listName="Completed"
+                    fieldName="completed">
+            </JobList>
+        </section>
     </div>
 </template>
 
