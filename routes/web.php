@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/php', [PhpController::class, 'index']);
+Route::get('/php/{name}', [PhpController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

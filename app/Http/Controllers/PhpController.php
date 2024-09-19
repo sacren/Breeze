@@ -13,4 +13,12 @@ class PhpController extends Controller
     {
         return view('welcome');
     }
+
+    /**
+     * Display PHP page.
+     */
+    public function show(String $name)
+    {
+        return view('php.' . $name);
+    }
 }
