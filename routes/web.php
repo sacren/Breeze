@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhpController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -14,9 +15,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/php', function () {
-    return view('home');
-});
+Route::get('/php', [PhpController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
