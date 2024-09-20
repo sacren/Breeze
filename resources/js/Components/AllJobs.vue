@@ -3,16 +3,14 @@
         <section v-show="filtered.todo.length">
             <JobList
                     :jobList="filtered.todo"
-                    listName="To Do"
-                    fieldName="todo">
+                    listName="To Do">
             </JobList>
         </section>
 
         <section v-show="filtered.completed.length">
             <JobList
                     :jobList="filtered.completed"
-                    listName="Completed"
-                    fieldName="completed">
+                    listName="Completed">
             </JobList>
         </section>
     </div>

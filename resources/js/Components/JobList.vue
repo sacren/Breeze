@@ -4,8 +4,7 @@
         <JobItem
             v-for="job in jobList"
             :key="job.id"
-            :job="job"
-            :fieldName="fieldName">
+            :job="job">
         </JobItem>
     </ul>
 </template>
@@ -21,7 +20,6 @@
         props: {
             jobList: Array,
             listName: String,
-            fieldName: String,
         },
     };
 </script>

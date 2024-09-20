@@ -4,7 +4,7 @@
             {{ job.name }}
             <input
                     class="ml-3"
-                    name="fieldName"
+                    name="jobItem"
                     type="checkbox"
                     v-model="job.status">
         </label>
@@ -15,7 +15,6 @@
     export default {
         props: {
             job: Object,
-            fieldName: String,
         },
     };
 </script>
