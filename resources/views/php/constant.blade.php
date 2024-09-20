@@ -39,3 +39,16 @@ if (true) {
     echo NEXT_VOTING;
     echo defined('NEXT_VOTING');
 }
+
+// dynamic constant
+$auth = 'value';
+define('AUTH_' . $auth, 1);
+
+echo AUTH_value;
+
+// predefined constants
+echo PHP_VERSION;
+
+// magic constants, they can change at runtime
+echo __LINE__;
+echo __FILE__;
