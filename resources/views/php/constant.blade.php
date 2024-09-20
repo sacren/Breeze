@@ -52,3 +52,14 @@ echo PHP_VERSION;
 // magic constants, they can change at runtime
 echo __LINE__;
 echo __FILE__;
+
+// variable variable
+$foo = 'bar';
+$$foo = 'tir';
+
+echo $foo, $bar;
+echo "$foo $bar";
+echo $foo, $$foo;
+echo "$foo $$foo";
+echo "$foo {$$foo}";
+echo "$foo ${$foo}";
