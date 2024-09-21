@@ -17,6 +17,7 @@
         <form @submit.prevent="addJob">
             <div class="border-2 border-green-500">
                 <input
+                        v-model="newJob"
                         placeholder="New Job"
                         type="text"
                         name="newJob"
@@ -43,6 +44,8 @@
                     { name: 'Run docker', status: false, id: 3 },
                     { name: 'Install Laravel', status: false, id: 4 },
                 ],
+
+                newJob: null,
             };
         },
 
@@ -57,7 +60,11 @@
 
         methods: {
             addJob() {
-                alert('Have a nice day!');
+                if (!this.newJob) {
+                    this.newJob = 'Have a nice day!';
+                }
+                alert(this.newJob);
+                this.newJob = null;
             },
         },
     };
