@@ -14,7 +14,7 @@
             </JobList>
         </section>
 
-        <form>
+        <form v-on:submit="addJob">
             <div class="border-2 border-green-500">
                 <input
                         placeholder="New Job"
@@ -52,6 +52,13 @@
                     todo: this.allJobs.filter(a => !a.status),
                     completed: this.allJobs.filter(a => a.status),
                 };
+            },
+        },
+
+        methods: {
+            addJob(event) {
+                event.preventDefault();
+                alert('Have a nice day!');
             },
         },
     };
