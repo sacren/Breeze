@@ -14,7 +14,7 @@
             </JobList>
         </section>
 
-        <form v-on:submit="addJob">
+        <form @submit.prevent="addJob">
             <div class="border-2 border-green-500">
                 <input
                         placeholder="New Job"
@@ -56,8 +56,7 @@
         },
 
         methods: {
-            addJob(event) {
-                event.preventDefault();
+            addJob() {
                 alert('Have a nice day!');
             },
         },
