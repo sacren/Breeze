@@ -5,7 +5,7 @@
 $name = 'Samuel';
 $name = 'Jones';
 
-echo $name;
+echo $name . '<br>'; // Jones, not Samuel
 
 /* Constants
  *
@@ -16,13 +16,13 @@ echo $name;
  */
 define('EARLY_VOTING', 'Yes');
 
-echo EARLY_VOTING;
+echo EARLY_VOTING . '<br>';
 
 // check if constant is defined, notice the single quotes
-echo defined('EARLY_VOTING');
+echo defined('EARLY_VOTING') . '<br>'; // 1
 
 // constant VOTING is not defined
-echo defined('VOTING');
+echo defined('VOTING') . '<br>'; // null
 
 /* const keyword
  *
@@ -31,35 +31,35 @@ echo defined('VOTING');
  * constants by define() function is created at runtime
  */
 const VOTING = 'Yes';
-echo VOTING;
-echo defined('VOTING');
+echo VOTING . '<br>';
+echo defined('VOTING') . '<br>';
 
 if (true) {
     define('NEXT_VOTING', 'No');
-    echo NEXT_VOTING;
-    echo defined('NEXT_VOTING');
+    echo NEXT_VOTING . '<br>';
+    echo defined('NEXT_VOTING') . '<br>';
 }
 
 // dynamic constant
 $auth = 'value';
 define('AUTH_' . $auth, 1);
 
-echo AUTH_value;
+echo AUTH_value . '<br>';
 
 // predefined constants
-echo PHP_VERSION;
+echo PHP_VERSION . '<br>';
 
 // magic constants, they can change at runtime
-echo __LINE__;
-echo __FILE__;
+echo __LINE__ . '<br>';
+echo __FILE__ . '<br>';
 
 // variable variable
 $foo = 'bar';
 $$foo = 'tir';
 
-echo $foo, $bar;
-echo "$foo $bar";
-echo $foo, $$foo;
-echo "$foo $$foo";
-echo "$foo {$$foo}";
+echo $foo . ' ' . $bar . '<br>';
+echo "$foo $bar" . '<br>';
+echo $foo . ' ' . $$foo . '<br>';
+echo "$foo $$foo" . '<br>';
+echo "$foo {$$foo}" . '<br>';
 echo "$foo ${$foo}";
