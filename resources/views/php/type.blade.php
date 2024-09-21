@@ -49,7 +49,7 @@ echo '<br>';
 # resource
 # null
 
-function sum($tmp1, $tmp2)
+function sum(int $tmp1, int $tmp2)
 {
     var_dump($tmp1, $tmp2);
     echo '<br>';
@@ -57,6 +57,8 @@ function sum($tmp1, $tmp2)
 }
 
 echo sum(1, 2) . '<br>';
-echo sum(1, '2') . '<br>';
+# type juggling
+# this will throw an error: sum('a', '2')
+echo sum(1.5, '2') . '<br>';
 $result = sum(1, '2');
 var_dump($result);
