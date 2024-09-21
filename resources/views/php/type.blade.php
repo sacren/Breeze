@@ -48,3 +48,15 @@ echo '<br>';
 # special types
 # resource
 # null
+
+function sum($tmp1, $tmp2)
+{
+    var_dump($tmp1, $tmp2);
+    echo '<br>';
+    return $tmp1 + $tmp2;
+}
+
+echo sum(1, 2) . '<br>';
+echo sum(1, '2') . '<br>';
+$result = sum(1, '2');
+var_dump($result);
