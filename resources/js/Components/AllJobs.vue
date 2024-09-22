@@ -61,9 +61,15 @@
         methods: {
             addJob() {
                 if (!this.newJob) {
-                    this.newJob = 'Have a nice day!';
+                    this.newJob = 'Apply Inertia and Vue';
                 }
-                alert(this.newJob);
+
+                this.allJobs.push({
+                    name: this.newJob,
+                    status: false,
+                    id: this.allJobs.length + 1,
+                });
+
                 this.newJob = null;
             },
         },
