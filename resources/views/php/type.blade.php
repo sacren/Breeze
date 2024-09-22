@@ -65,3 +65,13 @@ echo sum(1, 2) . '<br>';
 echo sum(1.5, 2) . '<br>';
 $result = sum(1, 2.5);
 var_dump($result);
+echo '<br>';
+
+# cast
+$score = '37.5';
+echo $score . '<br>';
+var_dump($score);
+echo '<br>';
+$score = (int) $score;
+echo $score . '<br>';
+var_dump($score);
