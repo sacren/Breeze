@@ -21,3 +21,43 @@ echo $number . '<br>';
 // binary integer
 $number = 0b1010; // 10
 echo $number . '<br>';
+
+// integer overflow
+$number = PHP_INT_MAX;
+var_dump($number);
+echo '<br>';
+$number += 1; // promote to float
+var_dump($number);
+echo '<br>';
+
+// cast boolean to integer
+$number = (int) true; // 1
+var_dump($number);
+echo '<br>';
+$number = (int) false; // 0
+var_dump($number);
+echo '<br>';
+
+// cast decimal to integer
+$number = (int) 3.94; // 3
+var_dump($number);
+echo '<br>';
+
+// cast string to integer
+$number = (int) '3.94'; // 3
+var_dump($number);
+echo '<br>';
+$number = (int) 'abc'; // 0
+var_dump($number);
+echo '<br>';
+$number = (int) '32xyz'; // 32
+var_dump($number);
+echo '<br>';
+
+// cast null to integer
+$number = (int) null; // 0
+var_dump($number);
+echo '<br>';
+$number = is_int($number); // integer?
+var_dump($number);
+echo '<br>';
