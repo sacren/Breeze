@@ -61,3 +61,14 @@ echo '<br>';
 $number = is_int($number); // integer?
 var_dump($number);
 echo '<br>';
+
+// improve integer readability
+$number = 200_000_000; // 200000000, no error
+var_dump($number);
+echo '<br>';
+$number = '200_000_000'; // 200_000_000 string
+var_dump($number);
+echo '<br>';
+$number = (int) '200_000_000'; // 200
+var_dump($number);
+echo '<br>';
