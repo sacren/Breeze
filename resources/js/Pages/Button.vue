@@ -2,7 +2,7 @@
     <Head title="Button" />
 
     <div class="min-h-screen grid place-content-center">
-        <button :class="active ? on : off" @click="flip">
+        <button :class="getAttribute" @click="flip">
             {{ getParty }}
         </button>
     </div>
@@ -35,6 +35,10 @@
         computed: {
             getParty() {
                 return this.active ? 'Republican' : 'Democrat';
+            },
+
+            getAttribute() {
+                return this.active ? this.on : this.off;
             },
         },
     };
