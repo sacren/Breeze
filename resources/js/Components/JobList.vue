@@ -1,11 +1,11 @@
 <template>
     <h2 v-show="jobList.length" class="mb-2 font-bold">{{ listName }}</h2>
     <ul class="border-2 border-green-500 divide-y divide-green-500">
-        <JobItem
+        <job-item
             v-for="job in jobList"
             :key="job.id"
             :job="job">
-        </JobItem>
+        </job-item>
     </ul>
 </template>
 

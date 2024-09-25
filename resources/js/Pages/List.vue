@@ -1,16 +1,16 @@
 <template>
     <Head title="List"></Head>
-    <AllOver></AllOver>
+    <all-jobs></all-jobs>
 </template>
 
 <script>
     import { Head } from '@inertiajs/vue3';
-    import AllOver from '@/Components/AllJobs.vue';
+    import AllJobs from '@/Components/AllJobs.vue';
 
     export default {
         components: {
             Head,
-            AllOver,
+            AllJobs,
         },
     };
 </script>

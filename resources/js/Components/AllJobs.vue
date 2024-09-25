@@ -1,17 +1,17 @@
 <template>
     <div class="grid place-content-center min-h-screen space-y-8">
         <section v-show="filtered.todo.length">
-            <JobList
+            <job-list
                     :jobList="filtered.todo"
                     listName="To Do">
-            </JobList>
+            </job-list>
         </section>
 
         <section v-show="filtered.completed.length">
-            <JobList
+            <job-list
                     :jobList="filtered.completed"
                     listName="Completed">
-            </JobList>
+            </job-list>
         </section>
 
         <form @submit.prevent="addJob">
