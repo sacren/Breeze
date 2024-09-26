@@ -9,7 +9,7 @@
 
     export default {
         components: {
-            'app-button': AppButton,
+            AppButton: AppButton,
         },
     };
 </script>
