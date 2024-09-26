@@ -2,8 +2,8 @@
     <Head title="Button" />
 
     <div class="min-h-screen grid place-content-center">
-        <button :class="getAttribute" @click="flip">
-            {{ getParty }}
+        <button :class="party.attributes" @click="flip">
+            {{ party.name }}
         </button>
     </div>
 </template>
@@ -33,12 +33,11 @@
         },
 
         computed: {
-            getParty() {
-                return this.active ? 'Republican' : 'Democrat';
-            },
-
-            getAttribute() {
-                return this.active ? this.on : this.off;
+            party() {
+                return {
+                    name: this.active ? 'Republican' : 'Democrat',
+                    attributes: this.active ? this.on : this.off,
+                };
             },
         },
     };
