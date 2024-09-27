@@ -14,27 +14,17 @@
 
 <script>
     export default {
-        props: {
-            allJobs: Array,
-        },
-
         data() {
             return {
                 newJob: null,
             };
         },
 
+        emits: ['add-job'],
+
         methods: {
             addJob() {
-                if (!this.newJob) {
-                    this.newJob = 'Apply Inertia and Vue';
-                }
-
-                this.allJobs.push({
-                    name: this.newJob,
-                    status: false,
-                    id: this.allJobs.length + 1,
-                });
+                this.$emit('add-job', this.newJob);
 
                 this.newJob = null;
             },

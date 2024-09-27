@@ -14,7 +14,7 @@
             </job-list>
         </section>
 
-        <job-add :all-jobs="allJobs"></job-add>
+        <job-add @add-job="addJob"></job-add>
     </div>
 </template>
 
@@ -36,8 +36,6 @@
                     { name: 'Run docker', status: false, id: 3 },
                     { name: 'Install Laravel', status: false, id: 4 },
                 ],
-
-                newJob: null,
             };
         },
 
@@ -51,18 +49,16 @@
         },
 
         methods: {
-            addJob() {
-                if (!this.newJob) {
-                    this.newJob = 'Apply Inertia and Vue';
+            addJob(newJob) {
+                if (!newJob) {
+                    newJob = 'Apply Inertia and Vue';
                 }
 
                 this.allJobs.push({
-                    name: this.newJob,
+                    name: newJob,
                     status: false,
                     id: this.allJobs.length + 1,
                 });
-
-                this.newJob = null;
             },
         },
     };
