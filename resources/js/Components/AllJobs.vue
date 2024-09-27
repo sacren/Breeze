@@ -2,15 +2,15 @@
     <div class="grid place-content-center min-h-screen space-y-8">
         <section v-show="filtered.todo.length">
             <job-list
-                    :jobList="filtered.todo"
-                    listName="To Do">
+                    :job-list="filtered.todo"
+                    list-name="To Do">
             </job-list>
         </section>
 
         <section v-show="filtered.completed.length">
             <job-list
-                    :jobList="filtered.completed"
-                    listName="Completed">
+                    :job-list="filtered.completed"
+                    list-name="Completed">
             </job-list>
         </section>
 
