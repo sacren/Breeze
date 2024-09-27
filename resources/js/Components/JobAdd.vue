@@ -14,6 +14,10 @@
 
 <script>
     export default {
+        props: {
+            allJobs: Array,
+        },
+
         data() {
             return {
                 newJob: null,
@@ -22,7 +26,17 @@
 
         methods: {
             addJob() {
-                alert('Add a new job');
+                if (!this.newJob) {
+                    this.newJob = 'Apply Inertia and Vue';
+                }
+
+                this.allJobs.push({
+                    name: this.newJob,
+                    status: false,
+                    id: this.allJobs.length + 1,
+                });
+
+                this.newJob = null;
             },
         },
     };
