@@ -16,13 +16,13 @@ echo $name . '<br>'; // Jones, not Samuel
  */
 define('EARLY_VOTING', 'Yes');
 
-echo EARLY_VOTING . '<br>';
+echo EARLY_VOTING . '<br>'; // Yes
 
 // check if constant is defined, notice the single quotes
 echo defined('EARLY_VOTING') . '<br>'; // 1
 
 // constant VOTING is not defined
-echo defined('VOTING') . '<br>'; // null
+echo defined('VOTING') . '<br>'; // null, blank
 
 /* const keyword
  *
@@ -31,20 +31,20 @@ echo defined('VOTING') . '<br>'; // null
  * constants by define() function is created at runtime
  */
 const VOTING = 'Yes';
-echo VOTING . '<br>';
-echo defined('VOTING') . '<br>';
+echo VOTING . '<br>'; // Yes
+echo defined('VOTING') . '<br>'; // 1
 
 if (true) {
     define('NEXT_VOTING', 'No');
-    echo NEXT_VOTING . '<br>';
-    echo defined('NEXT_VOTING') . '<br>';
+    echo NEXT_VOTING . '<br>'; // No
+    echo defined('NEXT_VOTING') . '<br>'; // 1
 }
 
 // dynamic constant
 $auth = 'value';
 define('AUTH_' . $auth, 1);
 
-echo AUTH_value . '<br>';
+echo AUTH_value . '<br>'; // 1
 
 // predefined constants
 echo PHP_VERSION . '<br>';
@@ -57,9 +57,9 @@ echo __FILE__ . '<br>';
 $foo = 'bar';
 $$foo = 'tir';
 
-echo $foo . ' ' . $bar . '<br>';
-echo "$foo $bar" . '<br>';
-echo $foo . ' ' . $$foo . '<br>';
-echo "$foo $$foo" . '<br>';
-echo "$foo {$$foo}" . '<br>';
-echo "$foo ${$foo}";
+echo $foo . ' ' . $bar . '<br>'; // bar tir
+echo "$foo $bar" . '<br>'; // bar tir
+echo $foo . ' ' . $$foo . '<br>'; // bar tir
+echo "$foo $$foo" . '<br>'; // bar $bar
+echo "$foo {$$foo}" . '<br>'; // bar tir
+echo "$foo ${$foo}" . '<br>'; // bar tir
