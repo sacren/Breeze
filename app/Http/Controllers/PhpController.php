@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class PhpController extends Controller
 {
     /**
@@ -19,6 +17,12 @@ class PhpController extends Controller
      */
     public function show(String $name)
     {
-        return view('php.' . $name);
+        $page = 'php.' . $name;
+
+        if (view()->exists($page)) {
+            return view($page);
+        }
+
+        abort(404);
     }
 }
