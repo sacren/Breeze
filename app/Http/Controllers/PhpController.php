@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\View;
+
 class PhpController extends Controller
 {
     /**
@@ -19,8 +21,8 @@ class PhpController extends Controller
     {
         $page = 'php.' . $name;
 
-        if (view()->exists($page)) {
-            return view($page);
+        if (View::exists($page)) {
+            return View::make($page);
         }
 
         abort(404);
