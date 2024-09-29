@@ -3,6 +3,9 @@
         {{ listName }}
         <span class="ml-2 text-red-500">({{ jobList.length }})</span>
     </h2>
+
+    <button v-for="tag in tags" :key="tag">{{ tag }}</button>
+
     <ul class="border-2 border-green-500 divide-y divide-green-500">
         <job-item
             v-for="job in jobList"
@@ -23,6 +26,16 @@
         props: {
             jobList: Array,
             listName: String,
+        },
+
+        computed: {
+            tags() {
+                return [
+                    'all',
+                    'platform',
+                    'apps',
+                ];
+            },
         },
     };
 </script>
