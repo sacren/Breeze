@@ -49,8 +49,12 @@ echo ceil($number) . '<br>'; // 4
 
 // NAN
 $number = NAN;
+var_dump($number); // float(NAN)
+echo '<br>';
 echo $number . '<br>'; // NAN
 $number = log(-1);
+var_dump($number); // float(NAN)
+echo '<br>';
 echo $number . '<br>'; // NAN
 var_dump(is_nan($number)); // bool(true)
 echo '<br>';
@@ -61,8 +65,12 @@ echo '<br>';
 
 // INF
 $number = INF;
+var_dump($number); // float(INF)
+echo '<br>';
 echo $number . '<br>'; // INF
 $number = PHP_FLOAT_MAX + PHP_FLOAT_MAX;
+var_dump($number); // float(INF)
+echo '<br>';
 echo $number . '<br>'; // INF
 var_dump(is_infinite($number)); // bool(true)
 echo '<br>';
