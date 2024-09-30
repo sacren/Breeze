@@ -37,3 +37,46 @@ echo '<br>';
  *
  * $name{1};
  */
+
+$tmp1 = 1;
+$tmp2 = 2;
+$tmp3 = 3;
+
+// heredoc
+$text = <<<TEXT
+               Line $tmp1
+               Line $tmp2
+               Line $tmp3
+               Line 4
+TEXT;
+
+echo $text . '<br>';
+echo nl2br($text) . '<br>';
+
+// nowdoc
+$text = <<<'TEXT'
+               Line 1
+               Line 2
+               Line $tmp3
+               Line 4
+TEXT;
+
+echo $text . '<br>';
+echo nl2br($text) . '<br>';
+
+$greeting = <<<TEXT
+Hello world!
+TEXT;
+
+echo $greeting . '<br>';
+
+var_dump($greeting); // string(12) "Hello world!"
+echo '<br>';
+
+$greeting = <<<TEXT
+    Hello world!
+TEXT;
+
+echo $greeting . '<br>';
+
+var_dump($greeting); // string(16) "Hello world!"
