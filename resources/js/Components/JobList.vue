@@ -5,7 +5,13 @@
     </h2>
 
     <div class="flex gap-2">
-        <button v-for="tag in tags" class="border-2 rounded-md border-blue-500 px-2 text-xs" :key="tag">{{ tag }}</button>
+        <button
+            v-for="tag in tags"
+            @click="currentTag = tag"
+            class="border-2 rounded-md border-blue-500 px-2 text-xs"
+            :key="tag">
+            {{ tag }}
+        </button>
     </div>
 
     <ul class="border-2 border-green-500 divide-y divide-green-500 mt-4">
@@ -28,6 +34,12 @@
         props: {
             jobList: Array,
             listName: String,
+        },
+
+        data() {
+            return {
+                currentTag: null,
+            };
         },
 
         computed: {
