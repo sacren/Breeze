@@ -38,7 +38,7 @@
 
         data() {
             return {
-                currentTag: null,
+                currentTag: 'all',
             };
         },
 
@@ -46,7 +46,7 @@
             tags() {
                 const tags = this.jobList.map(a => a.tag);
 
-                return new Set(tags);
+                return [ 'all', ...new Set(tags) ];
             },
         },
     };
