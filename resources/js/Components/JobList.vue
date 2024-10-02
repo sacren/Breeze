@@ -16,7 +16,7 @@
 
     <ul class="border-2 border-green-500 divide-y divide-green-500 mt-4">
         <job-item
-            v-for="job in jobList"
+            v-for="job in jobsByTag"
             :key="job.id"
             :job="job">
         </job-item>
@@ -43,6 +43,14 @@
         },
 
         computed: {
+            jobsByTag() {
+                if (this.currentTag === 'all') {
+                    return this.jobList;
+                }
+
+                return this.jobList.filter(a => a.tag === this.currentTag);
+            },
+
             tags() {
                 const tags = this.jobList.map(a => a.tag);
 
