@@ -32,7 +32,9 @@
 
         computed: {
             tags() {
-                return this.jobList.map(a => a.tag);
+                const tags = this.jobList.map(a => a.tag);
+
+                return new Set(tags);
             },
         },
     };
