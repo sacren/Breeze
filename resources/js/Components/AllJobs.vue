@@ -31,10 +31,10 @@
         data() {
             return {
                 allJobs: [
-                    { name: 'Patch kernel', status: false, id: 1 },
-                    { name: 'Update systemd', status: false, id: 2 },
-                    { name: 'Run docker', status: false, id: 3 },
-                    { name: 'Install Laravel', status: false, id: 4 },
+                    { name: 'Patch kernel', status: false, id: 1, tag: 'platform' },
+                    { name: 'Update systemd', status: false, id: 2, tag: 'platform' },
+                    { name: 'Run docker', status: false, id: 3, tag: 'apps' },
+                    { name: 'Install Laravel', status: false, id: 4, tag: 'apps' },
                 ],
             };
         },
@@ -58,6 +58,7 @@
                     name: newJob,
                     status: false,
                     id: this.allJobs.length + 1,
+                    tag: 'other',
                 });
             },
         },

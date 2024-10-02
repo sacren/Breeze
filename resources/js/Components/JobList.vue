@@ -32,11 +32,7 @@
 
         computed: {
             tags() {
-                return [
-                    'all',
-                    'platform',
-                    'apps',
-                ];
+                return this.jobList.map(a => a.tag);
             },
         },
     };
