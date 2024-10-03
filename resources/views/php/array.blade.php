@@ -63,6 +63,23 @@ echo '<pre>';
 print_r($fruits);
 echo '</pre>';
 
+// check if key exists
+var_dump(array_key_exists("apple", $fruits)); // true
+echo '<br>';
+var_dump(array_key_exists("orange", $fruits)); // false
+echo '<br>';
+var_dump(array_key_exists(0, $fruits)); // false
+echo '<br>';
+var_dump(array_key_exists('melon', $fruits)); // false
+echo '<br>';
+$fruits[] = null;
+var_dump(array_key_exists(0, $fruits)); // true
+echo '<br>';
+var_dump(isset($fruits['apple'])); // true
+echo '<br>';
+var_dump(isset($fruits[0])); // false
+echo '<br>';
+
 // multidimensional arrays
 $fruits = [
     "origin" => "South America",
@@ -137,3 +154,16 @@ $array[] = 'x';
 echo '<pre>';
 print_r($array); // Array ( [2] => d [3] => x )
 echo '</pre>';
+
+// casting
+$tmp = 3;
+var_dump((array) $tmp); // array(1) { [0]=> int(3) }
+echo '<br>';
+
+$tmp = 'foo';
+var_dump((array) $tmp); // array(1) { [0]=> string(3) "foo" }
+echo '<br>';
+
+$tmp = null;
+var_dump((array) $tmp); // array(0) {}
+echo '<br>';
