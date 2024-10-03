@@ -62,3 +62,27 @@ $fruits[$favorite] = "green";
 echo '<pre>';
 print_r($fruits);
 echo '</pre>';
+
+// multidimensional arrays
+$fruits = [
+    "origin" => "South America",
+    "apple" => [
+        "color" => "red",
+        "price" => 1.99,
+    ],
+    "banana" => [
+        "color" => "yellow",
+        "price" => 0.99,
+        "species" => [
+            "wild",
+            "domestic",
+        ],
+    ],
+];
+
+echo '<pre>';
+print_r($fruits);
+echo '</pre>';
+
+echo $fruits["apple"]["price"] . "<br>"; // 1.99
+echo $fruits["banana"]["species"][1] . "<br>"; // domestic
