@@ -86,3 +86,54 @@ echo '</pre>';
 
 echo $fruits["apple"]["price"] . "<br>"; // 1.99
 echo $fruits["banana"]["species"][1] . "<br>"; // domestic
+// $fruits["banana"]["species"][2] throws an error, no such key
+
+// update array with 0 key
+$fruits[] = "orange";
+echo $fruits[0] . "<br>"; // orange
+
+// '1' overrides 1
+$array = [0 => 'foo', 1 => 'bar', '1' => 'baz'];
+print_r($array); // Array ( [0] => foo [1] => baz )
+echo '<br>';
+
+// the last 1 overrides the rest
+$array = [true => 'a', 1 => 'b', '1' => 'c', 1.8 => 'd'];
+print_r($array); // Array ( [1] => 'd' )
+echo '<br>';
+
+// access with null and empty string
+$array = [true => 'a', 1 => 'b', '1' => 'c', 1.8 => 'd', null => 'e'];
+echo '<pre>';
+print_r($array); // Aray ( [1] => d, [] => e )
+echo '</pre>';
+
+echo $array[null] . "<br>"; // e
+echo $array[''] . "<br>"; // e
+
+$array = ['a', 'b', 50 => 'c', 'd', 'e'];
+echo '<pre>';
+print_r($array); // Array ( [0] => a [1] => b [50] => c [51] => d [52] => e )
+echo '</pre>';
+
+// shift and pop, index updated
+array_shift($array);
+echo '<pre>';
+print_r($array); // Array ( [0] => b [1] => c [2] => d [3] => e )
+echo '</pre>';
+
+array_pop($array);
+echo '<pre>';
+print_r($array); // Array ( [0] => b [1] => c [2] => d )
+echo '</pre>';
+
+// unset and push, index reserved
+unset($array[0], $array[1]);
+echo '<pre>';
+print_r($array); // Array ( [2] => d )
+echo '</pre>';
+
+$array[] = 'x';
+echo '<pre>';
+print_r($array); // Array ( [2] => d [3] => x )
+echo '</pre>';
