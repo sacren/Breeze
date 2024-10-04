@@ -8,8 +8,7 @@
         <button
             v-for="tag in tags"
             @click="activate(tag)"
-            class="border-2 rounded-md border-blue-500 px-2 text-xs"
-            :class="activeStyle(tag)"
+            :class="tagStyle(tag)"
             :key="tag">
             {{ tag }}
         </button>
@@ -64,10 +63,14 @@
                 this.currentTag = tag;
             },
 
-            activeStyle(tag) {
-                return {
-                    'bg-blue-500 text-white': tag === this.currentTag,
-                };
+            tagStyle(tag) {
+                const style = 'border-2 rounded-md border-blue-500 px-2 text-xs';
+
+                if (tag === this.currentTag) {
+                    return `${style} bg-blue-500 text-white`;
+                }
+
+                return style;
             },
         },
     };
