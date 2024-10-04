@@ -9,7 +9,7 @@
             v-for="tag in tags"
             @click="currentTag = tag"
             class="border-2 rounded-md border-blue-500 px-2 text-xs"
-            :class="{'bg-blue-500 text-white': tag === currentTag}"
+            :class="activeStyle(tag)"
             :key="tag">
             {{ tag }}
         </button>
@@ -56,6 +56,14 @@
                 const tags = this.jobList.map(a => a.tag);
 
                 return [ 'all', ...new Set(tags) ];
+            },
+        },
+
+        methods: {
+            activeStyle(tag) {
+                return {
+                    'bg-blue-500 text-white': tag === this.currentTag,
+                };
             },
         },
     };
