@@ -9,6 +9,7 @@
             v-for="tag in tags"
             @click="currentTag = tag"
             class="border-2 rounded-md border-blue-500 px-2 text-xs"
+            :class="{'bg-blue-500 text-white': tag === currentTag}"
             :key="tag">
             {{ tag }}
         </button>
