@@ -25,9 +25,7 @@
 
         computed: {
             tags() {
-                const tags = this.tagList.map(a => a.tag);
-
-                return [ 'all', ...new Set(tags) ];
+                return [ 'all', ...new Set(this.tagList) ];
             },
         },
     };
