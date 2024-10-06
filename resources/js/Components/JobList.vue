@@ -4,15 +4,7 @@
         <span class="ml-2 text-red-500">({{ jobList.length }})</span>
     </h2>
 
-    <div class="flex gap-2">
-        <button
-            v-for="tag in tags"
-            @click="activate(tag)"
-            :class="tagStyle(tag)"
-            :key="tag">
-            {{ tag }}
-        </button>
-    </div>
+    <job-tags :tag-list="jobList.map(a => a.tag)"></job-tags>
 
     <ul class="border-2 border-green-500 divide-y divide-green-500 mt-4">
         <job-item
@@ -25,10 +17,12 @@
 
 <script>
     import JobItem from './JobItem.vue';
+    import JobTags from './JobTags.vue';
 
     export default {
         components: {
             JobItem,
+            JobTags,
         },
 
         props: {
