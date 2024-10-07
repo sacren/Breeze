@@ -2,7 +2,7 @@
     <div class="flex gap-2">
         <button
             v-for="tag in tags"
-            @click="currentTag = tag"
+            @click="$emit('change', tag)"
             class="border-2 rounded-md border-blue-500 px-2 text-xs"
             :class="{ 'bg-blue-500 text-white': currentTag === tag }"
             :key="tag">
@@ -15,12 +15,7 @@
     export default {
         props: {
             tagList: Array,
-        },
-
-        data() {
-            return {
-                currentTag: 'all',
-            };
+            currentTag: String,
         },
 
         computed: {

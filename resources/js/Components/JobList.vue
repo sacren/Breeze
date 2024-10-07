@@ -4,7 +4,11 @@
         <span class="ml-2 text-red-500">({{ jobList.length }})</span>
     </h2>
 
-    <job-tags :tag-list="jobList.map(a => a.tag)"></job-tags>
+    <job-tags
+        :tag-list="jobList.map(a => a.tag)"
+        :current-tag="currentTag"
+        @change="currentTag = $event">
+    </job-tags>
 
     <ul class="border-2 border-green-500 divide-y divide-green-500 mt-4">
         <job-item
