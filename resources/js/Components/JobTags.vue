@@ -18,6 +18,8 @@
             currentTag: String,
         },
 
+        emits: [ 'change' ],
+
         computed: {
             tags() {
                 return [ 'all', ...new Set(this.tagList) ];
