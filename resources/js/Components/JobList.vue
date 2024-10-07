@@ -55,21 +55,5 @@
                 return [ 'all', ...new Set(tags) ];
             },
         },
-
-        methods: {
-            activate(tag) {
-                this.currentTag = tag;
-            },
-
-            tagStyle(tag) {
-                const style = 'border-2 rounded-md border-blue-500 px-2 text-xs';
-
-                if (tag === this.currentTag) {
-                    return `${style} bg-blue-500 text-white`;
-                }
-
-                return style;
-            },
-        },
     };
 </script>
