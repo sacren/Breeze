@@ -157,3 +157,77 @@ echo "<br>";
 $tmp2 = $tmp3 ?? 'default';
 var_dump($tmp2); // string(7) "default"
 echo "<br>";
+
+// error control operator (@), do not use
+// $tmp = @fopen('non-existing-file', 'r');
+
+// increment and decrement operators
+$tmp = 10;
+echo $tmp++ . '<br>'; // 10
+echo $tmp . '<br>'; // 11
+echo ++$tmp . '<br>'; // 12
+echo $tmp . '<br>'; // 12
+echo --$tmp . '<br>'; // 11
+echo $tmp . '<br>'; // 11
+echo $tmp-- . '<br>'; // 11
+echo $tmp . '<br>'; // 10
+echo --$tmp . '<br>'; // 9
+echo $tmp . '<br>'; // 9
+
+// $tmp = true; $tmp++ or $tmp--, no effect, don't use
+
+$tmp = null;
+var_dump($tmp); // NULL
+echo '<br>';
+$tmp++;
+var_dump($tmp); // NULL
+echo '<br>';
+
+$tmp = 'abc';
+$tmp--; // no effect on decrement
+var_dump($tmp); // string(3) "abc"
+echo '<br>';
+$tmp++;
+var_dump($tmp); // string(3) "abd"
+echo '<br>';
+
+// logical operators
+$tmp1 = true;
+$tmp2 = false;
+$tmp3 = $tmp1 and $tmp2; // differ from &&
+var_dump($tmp3); // bool(true)
+echo '<br>';
+
+$tmp3 = $tmp1 && $tmp2; // differ from and
+var_dump($tmp3); // bool(false)
+echo '<br>';
+
+$tmp = true;
+
+function getFalse() {
+    return false;
+}
+
+var_dump($tmp or getFalse()); // bool(true)
+echo '<br>';
+
+$tmp = false;
+var_dump($tmp && getFalse() || true); // bool(true)
+echo '<br>';
+
+// bitwise operators
+$tmp1 = 6; // 0000 0110
+$tmp2 = 3; // 0000 0011
+
+var_dump($tmp1 & $tmp2); // int(2)
+echo '<br>';
+var_dump($tmp1 | $tmp2); // int(7)
+echo '<br>';
+var_dump($tmp1 ^ $tmp2); // int(5)
+echo '<br>';
+var_dump(~$tmp1 & $tmp2); // int(1)
+echo '<br>';
+var_dump($tmp1 << $tmp2); // int(48)
+echo '<br>';
+var_dump($tmp1 >> $tmp2); // int(0)
+echo '<br>';
