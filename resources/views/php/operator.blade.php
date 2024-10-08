@@ -231,3 +231,46 @@ var_dump($tmp1 << $tmp2); // int(48)
 echo '<br>';
 var_dump($tmp1 >> $tmp2); // int(0)
 echo '<br>';
+
+// array operators
+$tmp1 = ['a', 'b', 'c']; // same index
+$tmp2 = ['d', 'e', 'f']; // same index
+$tmp = $tmp1 + $tmp2; // same index
+echo '<pre>';
+print_r($tmp);
+echo '</pre>';
+$tmp2 = ['d', 'e', 'f', 'g', 'h'];
+$tmp = $tmp1 + $tmp2; // append 'g', 'h'
+echo '<pre>';
+print_r($tmp);
+echo '</pre>';
+$tmp1 = ['a' => 1, 'b' => 2, 'c' => 3];
+$tmp2 = ['d' => 4, 'e' => 5, 'f' => 6];
+$tmp = $tmp1 + $tmp2; // no value override
+echo '<pre>';
+print_r($tmp);
+echo '</pre>';
+
+// compare
+$tmp1 = ['a' => 1, 'b' => 2, 'c' => 3];
+$tmp2 = ['a' => 1, 'b' => 2, 'c' => 3];
+$tmp = $tmp1 == $tmp2;
+var_dump($tmp); // bool(true)
+echo '<br>';
+$tmp = $tmp1 === $tmp2;
+var_dump($tmp); // bool(true)
+echo '<br>';
+$tmp2 = ['a' => '1', 'b' => 2, 'c' => 3]; // '1'
+$tmp = $tmp1 == $tmp2;
+var_dump($tmp); // bool(true)
+echo '<br>';
+$tmp = $tmp1 === $tmp2;
+var_dump($tmp); // bool(false)
+echo '<br>';
+$tmp2 = ['a' => 1, 'c' => 3, 'b' => 2]; // different order
+$tmp = $tmp1 == $tmp2;
+var_dump($tmp); // bool(true)
+echo '<br>';
+$tmp = $tmp1 === $tmp2;
+var_dump($tmp); // bool(false)
+echo '<br>';
