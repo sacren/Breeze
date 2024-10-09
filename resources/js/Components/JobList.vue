@@ -5,8 +5,8 @@
     </h2>
 
     <job-tags
+        v-model="currentTag"
         :tag-list="jobList.map(a => a.tag)"
-        :current-tag="currentTag"
         @change="currentTag = $event">
     </job-tags>
 

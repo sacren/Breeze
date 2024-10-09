@@ -4,7 +4,7 @@
             v-for="tag in tags"
             @click="$emit('change', tag)"
             class="border-2 rounded-md border-blue-500 px-2 text-xs"
-            :class="{ 'bg-blue-500 text-white': currentTag === tag }"
+            :class="{ 'bg-blue-500 text-white': tag === modelValue }"
             :key="tag">
             {{ tag }}
         </button>
@@ -15,7 +15,7 @@
     export default {
         props: {
             tagList: Array,
-            currentTag: String,
+            modelValue: String,
         },
 
         emits: [ 'change' ],
