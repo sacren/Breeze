@@ -47,12 +47,6 @@
 
                 return this.jobList.filter(a => a.tag === this.currentTag);
             },
-
-            tags() {
-                const tags = this.jobList.map(a => a.tag);
-
-                return [ 'all', ...new Set(tags) ];
-            },
         },
     };
 </script>
