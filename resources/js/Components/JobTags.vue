@@ -2,7 +2,7 @@
     <div class="flex gap-2">
         <button
             v-for="tag in tags"
-            @click="$emit('change', tag)"
+            @click="$emit('update:modelValue', tag)"
             class="border-2 rounded-md border-blue-500 px-2 text-xs"
             :class="{ 'bg-blue-500 text-white': tag === modelValue }"
             :key="tag">
@@ -18,7 +18,7 @@
             modelValue: String,
         },
 
-        emits: [ 'change' ],
+        emits: [ 'update:modelValue' ],
 
         computed: {
             tags() {

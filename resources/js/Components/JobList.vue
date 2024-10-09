@@ -7,7 +7,6 @@
     <job-tags
         v-model="currentTag"
         :tag-list="jobList.map(a => a.tag)"
-        @change="currentTag = $event">
     </job-tags>
 
     <ul class="border-2 border-green-500 divide-y divide-green-500 mt-4">
