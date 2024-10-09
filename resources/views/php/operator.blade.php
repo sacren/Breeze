@@ -274,3 +274,41 @@ echo '<br>';
 $tmp = $tmp1 === $tmp2;
 var_dump($tmp); // bool(false)
 echo '<br>';
+
+// operator precedence
+$tmp = 10 + 2 * 3; // 16, * higher than +, + higher than =
+echo $tmp . '<br>';
+
+$tmp = (10 + 2) * 3; // 36, () higher than *
+echo $tmp . '<br>';
+
+// associativity
+$tmp1 = $tmp2 = 16; // 16, assigned to $tmp2, $tmp2 assigned to $tmp1
+echo $tmp1 . ' ' . $tmp2 . '<br>';
+
+$tmp1 = 5;
+$tmp2 = 2;
+$tmp3 = 10;
+
+// left to right due to / and * higher than + and -
+$tmp = $tmp1 / $tmp2 * $tmp3; // 25
+echo $tmp . '<br>';
+
+// wrong: $tmp1 < $tmp2 > $tmp3; due to no precedence
+
+$tmp1 = true;
+$tmp2 = false;
+var_dump($tmp1 && !$tmp2); // bool(true)
+echo '<br>';
+
+$tmp3 = true;
+var_dump($tmp1 && $tmp2 || $tmp3); // bool(true)
+echo '<br>';
+
+$tmp3 = $tmp1 && $tmp2; // && higher precedence than =
+var_dump($tmp3); // bool(false)
+echo '<br>';
+
+$tmp3 = $tmp1 and $tmp2; // = higher precedence than and
+var_dump($tmp3); // bool(true)
+echo '<br>';
