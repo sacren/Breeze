@@ -5,7 +5,7 @@
     </h2>
 
     <job-tags
-        v-model="currentTag"
+        v-model:current-tag="currentTag"
         :tag-list="jobList.map(a => a.tag)"
     </job-tags>
 
