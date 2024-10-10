@@ -1,5 +1,23 @@
-<x-layout></x-layout>
+<x-layout>
+
+<?php $score = 75; ?>
+
+<?php if ($score >= 90): // use : for markup next ?>
+    <strong>A</strong>
+<?php elseif ($score >= 80): // can't use else if ?>
+    <strong>B</strong>
+<?php elseif ($score >= 70): ?>
+    <strong>C</strong>
+<?php elseif ($score >= 60): ?>
+    <strong>D</strong>
+<?php else: ?>
+    <strong>F</strong>
+<?php endif; // terminate if statement ?>
+
+</x-layout>
 <?php
+
+echo '<br>';
 
 // control structures (if / else / elseif)
 
