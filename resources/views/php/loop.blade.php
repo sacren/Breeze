@@ -56,3 +56,11 @@ while ($i < 10):
 
     echo $i++;
 endwhile;
+
+echo '<br>';
+
+// do while
+$i = 0;
+do {
+    echo $i++; // executed at least once
+} while ($i < 10);
