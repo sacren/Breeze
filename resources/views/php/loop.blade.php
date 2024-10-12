@@ -91,6 +91,11 @@ for ($i = 0, $total = count($fruits); $i < $total; $i++) {
     echo $fruits[$i] . '<br>';
 }
 
+// alternative syntax
+for ($i = 0; $i < count($fruits); $i++):
+    echo $fruits[$i] . '<br>';
+endfor; // ends with ;
+
 // use foreach for arrays
 foreach ($fruits as $name) {
     echo $name . '<br>';
@@ -101,6 +106,11 @@ foreach ($fruits as $key => $name) {
     echo $key . ': ' . $name . '<br>';
 }
 
+// alternative syntax
+foreach ($fruits as $key => $value):
+    echo $key . ': ' . $value . '<br>';
+endforeach; // ends with ;
+
 // pass by reference
 foreach ($fruits as $key => &$name) { // & operator
     $name = 'watermelon'; // modifies $fruits array
@@ -108,3 +118,24 @@ foreach ($fruits as $key => &$name) { // & operator
 
 unset($name); // this is necessary to remove reference
 print_r($fruits);
+
+echo '<br>';
+
+$fruits = [
+    $name = 'apple',
+    $origin = 'USA',
+    $brands = [
+        'Gala',
+        'Red Delicious',
+        'Granny Smith',
+    ],
+];
+
+// nested array
+foreach ($fruits as $key => $value) {
+    if (is_array($value)) {
+        $value = implode(', ', $value);
+    }
+
+    echo $key . ': ' . $value . '<br>';
+}
