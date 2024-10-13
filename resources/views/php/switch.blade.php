@@ -62,3 +62,23 @@ switch ($payment) { // true == 1 or '1' == 1
     echo 'Unknown payment';
     break;
 }
+
+echo '<br>';
+
+$payments = [1, 2, 3];
+
+foreach ($payments as $payment) {
+    switch ($payment) {
+    case 1:
+        echo 'Payment is successful';
+        break 2;
+
+    case 2:
+        echo 'Payment is pending';
+        break 2;
+
+    default:
+        echo 'Unknown payment';
+        break 2;
+    }
+}
