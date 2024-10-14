@@ -24,3 +24,27 @@ $result = match ($payment) { // match is an expression
 
 var_dump($result);
 echo '<br>';
+
+$payment = '1';
+
+// match uses strict comparison
+$result = match ($payment) {
+    1 => 'Payment is successful',
+    2 => 'Payment is pending',
+    3 => 'Payment was declined',
+    default => 'Payment is not known', // shows this rather than 1
+};
+
+echo $result . '<br>';
+
+$payment = 2;
+
+// fallthrough
+$result = match ($payment) {
+    1 => 'Payment is successful',
+    2, 3 => 'Payment is pending',
+    4 => 'Payment was declined',
+    default => 'Payment is not known',
+};
+
+echo $result . '<br>';
