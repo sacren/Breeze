@@ -48,3 +48,14 @@ $result = match ($payment) {
 };
 
 echo $result . '<br>';
+
+$age = 18;
+
+$result = match (true) {
+    $age > 18 => 'Adult',
+    $age > 12 => 'Youth',
+    $age > 6 => 'Child',
+    default => 'Infant',
+};
+
+var_dump($result);
