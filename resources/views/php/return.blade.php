@@ -1,3 +1,6 @@
+<?php
+declare(strict_types = 1); // must be the first line
+?>
 <x-layout></x-layout>
 <?php
 
@@ -12,6 +15,7 @@ function sum(int $a, int $b) {
 // return; this ends the script
 
 echo sum(5, 10) . '<br>'; // 15
+// echo sum('5', 10) . '<br>'; error due to type mismatch
 
 function onTick() {
     echo 'Tick<br>';
