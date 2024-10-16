@@ -28,3 +28,17 @@ declare(ticks = 3); // global scope
 for ($i = 0; $i < 6; $i++) {
     echo $i . '<br>';
 }
+
+// goto
+for ($i = 0; $i < 6; $i++) {
+    for ($j = 0; $j < 6; $j++) {
+        if ($i == 2 && $j == 2) {
+            goto out;  // jump out of both loops
+        }
+
+        echo 'i = ' . $i . ', j = ' . $j . '<br>';
+    }
+}
+
+out:
+echo 'Exited the loop' . '<br>';
