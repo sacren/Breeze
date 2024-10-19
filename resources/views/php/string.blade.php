@@ -51,7 +51,13 @@ $text = <<<TEXT
 TEXT;
 
 echo $text . '<br>';
+var_dump($text);
+echo '<br>';
 echo nl2br($text) . '<br>';
+
+// number of bytes of single-byte characters
+echo strlen($text) . '<br>'; // 87
+echo mb_strlen($text) . '<br>'; // 87
 
 // nowdoc
 $text = <<<'TEXT'
@@ -80,3 +86,16 @@ TEXT;
 echo $greeting . '<br>';
 
 var_dump($greeting); // string(16) "Hello world!"
+
+echo '<br>';
+
+// mix of single-byte and multi-byte characters
+$algorithm = <<<'BYTE'
+ الخوارزمي
+BYTE;
+
+echo $algorithm . '<br>';
+var_dump($algorithm); // string(19) " الخوارزمي"
+echo '<br>';
+echo strlen($algorithm) . '<br>'; // 19
+echo mb_strlen($algorithm) . '<br>'; // 10
