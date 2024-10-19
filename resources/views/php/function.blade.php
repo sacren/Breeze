@@ -1,3 +1,6 @@
+<?php
+declare(strict_types=1);
+?>
 <x-layout></x-layout>
 <?php
 
@@ -54,23 +57,23 @@ function getOne(): int // return type
     return 1;
 }
 
-var_dump(getOne());
+var_dump(getOne()); // int(1)
 echo '<br>';
 
-function getStringOne(): string
+function getStringOne(): int|string
 {
-    return 1; // integer converted to string
+    return 1; // use union of int and string to support both
 }
 
-var_dump(getStringOne());
+var_dump(getStringOne()); // int(1)
 echo '<br>';
 
-function getNumberOne(): int
+function getNumberOne(): int|string
 {
-    return '1'; // string converted to integer
+    return '1'; // use union of int and string to support both
 }
 
-var_dump(getNumberOne());
+var_dump(getNumberOne()); // string(1)
 echo '<br>';
 
 function getNothing(): void // can't use null here
