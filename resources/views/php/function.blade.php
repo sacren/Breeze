@@ -109,3 +109,21 @@ function getMuch(): mixed // wrong: ?mixed
 
 var_dump(getMuch());
 echo '<br>';
+
+// quotient or dividend
+function getQuotientOrDividend(int $a, int $b): int
+{
+    if ($b !== 0 && $a % $b === 0) {
+        return $a / $b;
+    }
+
+    return $a;
+}
+
+// use named arguments
+var_dump(getQuotientOrDividend(a: 10, b: 2));
+echo '<br>';
+var_dump(getQuotientOrDividend(b: 3, a: 12)); // order does not matter
+echo '<br>';
+var_dump(getQuotientOrDividend(a: 10, b: 0));
+echo '<br>';
