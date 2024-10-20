@@ -57,7 +57,7 @@ echo nl2br($text) . '<br>';
 
 // number of bytes of single-byte characters
 echo strlen($text) . '<br>'; // 87
-echo mb_strlen($text) . '<br>'; // 87
+echo mb_strlen($text, 'UTF-8') . '<br>'; // 87
 
 // nowdoc
 $text = <<<'TEXT'
@@ -91,11 +91,12 @@ echo '<br>';
 
 // mix of single-byte and multi-byte characters
 $algorithm = <<<'BYTE'
- الخوارزمي
+الخوارزمي
+算法
 BYTE;
 
-echo $algorithm . '<br>';
-var_dump($algorithm); // string(19) " الخوارزمي"
+echo nl2br($algorithm) . '<br>';
+var_dump($algorithm); // string(25) "الخوارزمي算法"
 echo '<br>';
-echo strlen($algorithm) . '<br>'; // 19
-echo mb_strlen($algorithm) . '<br>'; // 10
+echo strlen($algorithm) . '<br>'; // 25
+echo mb_strlen($algorithm, 'UTF-8') . '<br>'; // 12
