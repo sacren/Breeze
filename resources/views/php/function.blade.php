@@ -111,7 +111,7 @@ var_dump(getMuch());
 echo '<br>';
 
 // quotient or dividend
-function getQuotientOrDividend(int $a, int $b): int
+function getQuotientOrDividend(int $a = 10, int $b = 2): int
 {
     if ($b !== 0 && $a % $b === 0) {
         return $a / $b;
@@ -126,4 +126,16 @@ echo '<br>';
 var_dump(getQuotientOrDividend(b: 3, a: 12)); // order does not matter
 echo '<br>';
 var_dump(getQuotientOrDividend(a: 10, b: 0));
+echo '<br>';
+
+// use default arguments
+var_dump(getQuotientOrDividend());
+echo '<br>';
+
+// use spread operator
+var_dump(getQuotientOrDividend(...['a' => 10, 'b' => 2]));
+echo '<br>';
+
+$numbers = ['a' => 10, 'b' => 2];
+echo getQuotientOrDividend(...$numbers);
 echo '<br>';
