@@ -139,3 +139,22 @@ echo '<br>';
 $numbers = ['a' => 10, 'b' => 2];
 echo getQuotientOrDividend(...$numbers);
 echo '<br>';
+
+// pass by reference: &$a
+function passByRef(int|float &$a, int|float $b): int|float
+{
+    $a--;
+
+    return $b;
+}
+
+$tmp1 = 6.0;
+$tmp2 = 7;
+
+var_dump($tmp1, $tmp2); // $tmp1 holds 6.0
+echo '<br>';
+
+$tmp2 = passByRef($tmp1, $tmp2);
+
+var_dump($tmp1, $tmp2); // $tmp1 changes from 6.0 to 5.0
+echo '<br>';
