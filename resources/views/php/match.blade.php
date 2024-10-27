@@ -1,5 +1,5 @@
-<x-layout></x-layout>
-<?php
+<x-layout>
+@php
 
 $payment = 'pending';
 
@@ -22,12 +22,11 @@ $result = match ($payment) { // match is an expression
     default => 'Payment is not known',
 };
 
-var_dump($result);
-echo '<br>';
+echo $result . '<br>';
 
 $payment = '1';
 
-// match uses strict comparison
+// match uses strict type comparison
 $result = match ($payment) {
     1 => 'Payment is successful',
     2 => 'Payment is pending',
@@ -58,4 +57,7 @@ $result = match (true) {
     default => 'Infant',
 };
 
-var_dump($result);
+echo $result . '<br>';
+
+@endphp
+</x-layout>
