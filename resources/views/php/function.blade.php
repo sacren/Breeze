@@ -1,8 +1,9 @@
-<?php
+@php
 declare(strict_types=1);
-?>
-<x-layout></x-layout>
-<?php
+@endphp
+
+<x-layout>
+@php
 
 // declare function foo
 function foo()
@@ -169,3 +170,6 @@ echo sum($tmp1, $tmp2, 2, 3, 28, '1') . '<br>';
 
 $tmp3 = [2, 3, 28, '1'];
 echo sum($tmp1, $tmp2, ...$tmp3) . '<br>';
+
+@endphp
+</x-layout>
