@@ -132,7 +132,7 @@ echo '<br>';
 var_dump(getQuotientOrDividend());
 echo '<br>';
 
-// use spread operator
+// use splat operator
 var_dump(getQuotientOrDividend(...['a' => 10, 'b' => 2]));
 echo '<br>';
 
@@ -158,3 +158,14 @@ $tmp2 = passByRef($tmp1, $tmp2);
 
 var_dump($tmp1, $tmp2); // $tmp1 changes from 6.0 to 5.0
 echo '<br>';
+
+// variadic function with splat operator for type hinting
+function sum(int|float $a, int|float $b, int|float|string ...$numbers): int|float
+{
+    return $a + $b + array_sum($numbers);
+}
+
+echo sum($tmp1, $tmp2, 2, 3, 28, '1') . '<br>';
+
+$tmp3 = [2, 3, 28, '1'];
+echo sum($tmp1, $tmp2, ...$tmp3) . '<br>';
