@@ -1,4 +1,8 @@
 <x-layout>
+  <x-slot name="majesty">
+    Intro
+  </x-slot>
+
   <h1>
     @php
     echo 'Hello World!' . '<br>';
