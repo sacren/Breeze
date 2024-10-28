@@ -1,20 +1,23 @@
 <x-layout>
   <h1>
-    <?php echo 'Hello World!'; ?>
-    <?= 'Hello World!' // shorthand without echo and ; ?>
-    <?php
+    @php
+    echo 'Hello World!' . '<br>';
+    @endphp
+
+    {{ 'Hello World!' . '<br>' }} @php // shorthand without echo and ; @endphp
+
+    @php
     // full version for business logic
     $tmp1 = 1;
     $tmp2 = 2;
     echo $tmp1 . ', ' . $tmp2;
-    ?>
+    @endphp
   </h1>
-  <?php
-  // not good idea to mix with HTML tags
-  echo '<p>' . $tmp1 . ', ' . $tmp2 . '</p>';
-  ?>
-</x-layout>
-<?php
+
+@php
+
+// not good idea to mix with HTML tags
+echo '<p>' . $tmp1 . ', ' . $tmp2 . '</p>';
 
 echo 'Hello World!' . '<br>';
 print 'Hello World!' . '<br>';
@@ -38,7 +41,7 @@ echo 'Hello', ' ', 'World!', '<br>';
 echo 'What\'s up?' . '<br>';
 echo "What's up?" . '<br>';
 
-/* Use varibles.
+/* use variables.
  *
  * These are wrong:
  * $123name;
@@ -69,3 +72,7 @@ $tmp1 = 1;
 $tmp2 = &$tmp1;
 $tmp1 = 2;
 echo $tmp2; // 2
+
+@endphp
+
+</x-layout>
