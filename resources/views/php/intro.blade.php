@@ -1,5 +1,5 @@
 <x-layout>
-  <x-slot name="majesty">
+  <x-slot:title>
     Intro
   </x-slot>
 

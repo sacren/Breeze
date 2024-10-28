@@ -3,6 +3,7 @@ declare(strict_types=1);
 @endphp
 
 <x-layout>
+<x-slot:title>Function</x-slot>
 @php
 
 // declare function foo
