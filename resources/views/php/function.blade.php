@@ -171,5 +171,13 @@ echo sum($tmp1, $tmp2, 2, 3, 28, '1') . '<br>';
 $tmp3 = [2, 3, 28, '1'];
 echo sum($tmp1, $tmp2, ...$tmp3) . '<br>';
 
+// variable function
+$greet = 'foo';
+
+// calling variable function
+if (is_callable($greet)) { // this check makes it robust
+    $greet();
+}
+
 @endphp
 </x-layout>
