@@ -177,7 +177,15 @@ $greet = 'foo';
 // calling variable function
 if (is_callable($greet)) { // this check makes it robust
     $greet();
+    echo '<br>';
 }
+
+// anonymous function: expression
+$sum = function (int|float|string ...$numbers): int|float {
+    return array_sum($numbers);
+}; // terminate with semicolon
+
+echo $sum(2, 3, 28, '1') . '<br>';
 
 @endphp
 </x-layout>
