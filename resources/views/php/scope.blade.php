@@ -23,5 +23,27 @@ function getTmpGlobal()
 
 echo getTmpGlobal() . '<br>';
 
+// to be cached
+function someOperation()
+{
+    sleep(2);
+
+    echo 'Some operation' . '<br>';
+
+    return 10;
+}
+
+// use static variable
+function getStaticValue()
+{
+    static $tmp = someOperation();
+
+    return $tmp;
+}
+
+echo getStaticValue() . '<br>';
+echo getStaticValue() . '<br>';
+echo getStaticValue() . '<br>';
+
 @endphp
 </x-layout>
