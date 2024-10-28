@@ -181,7 +181,8 @@ if (is_callable($greet)) { // this check makes it robust
 }
 
 // anonymous function: expression
-$sum = function (int|float|string ...$numbers): int|float {
+$sum = function (int|float|string ...$numbers) use ($tmp1): int|float { // $tmp1 copied
+    echo $tmp1 . '<br>';
     return array_sum($numbers);
 }; // terminate with semicolon
 
