@@ -196,12 +196,7 @@ function addThree(int|float|string $each): int|float
 }
 
 $sum = function (callable $callBack, int|float|string ...$numbers) {
-    $n = [];
-    foreach ($numbers as $number) {
-        $n[] = $callBack($number);
-    }
-
-    return array_sum($n);
+    return array_sum(array_map($callBack, $numbers));
 };
 
 echo $sum('addThree', 2, 3, 28, '1') . '<br>'; // 46
