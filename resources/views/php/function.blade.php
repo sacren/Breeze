@@ -222,5 +222,14 @@ echo '<pre>';
 print_r($tmp8);
 echo '</pre>';
 
+$two = 2; // different scope as to arrow function
+
+// arrow function
+$tmp9 = array_map(fn($a) => $a + $two, $tmp3);
+
+echo '<pre>';
+print_r($tmp9);
+echo '</pre>';
+
 @endphp
 </x-layout>
