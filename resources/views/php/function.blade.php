@@ -189,5 +189,38 @@ $sum = function (int|float|string ...$numbers) use ($tmp1): int|float { // $tmp1
 
 echo $sum(2, 3, 28, '1') . '<br>';
 
+// pass in anonymous function
+$tmp4 = array_map(function (int|float $a): int|float {
+    return $a + 1;
+}, $tmp3);
+
+echo '<pre>';
+print_r($tmp3);
+print_r($tmp4);
+echo '</pre>';
+
+// pass anonymous function by variable
+$tmp5 = function (int|float $a): int|float {
+    return $a + 1;
+};
+
+$tmp6 = array_map($tmp5, $tmp3);
+
+echo '<pre>';
+print_r($tmp6);
+echo '</pre>';
+
+function tmp7(int|float $a): int|float
+{
+    return $a + 1;
+}
+
+// pass function by reference
+$tmp8 = array_map('tmp7', $tmp3);
+
+echo '<pre>';
+print_r($tmp8);
+echo '</pre>';
+
 @endphp
 </x-layout>
