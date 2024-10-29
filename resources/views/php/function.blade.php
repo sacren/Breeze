@@ -187,7 +187,24 @@ $sum = function (int|float|string ...$numbers) use ($tmp1): int|float { // $tmp1
     return array_sum($numbers);
 }; // terminate with semicolon
 
-echo $sum(2, 3, 28, '1') . '<br>';
+echo $sum(2, 3, 28, '1') . '<br>'; // 34
+
+// callback function
+function addThree(int|float|string $each): int|float
+{
+    return $each + 3;
+}
+
+$sum = function (callable $callBack, int|float|string ...$numbers) {
+    $n = [];
+    foreach ($numbers as $number) {
+        $n[] = $callBack($number);
+    }
+
+    return array_sum($n);
+};
+
+echo $sum('addThree', 2, 3, 28, '1') . '<br>'; // 46
 
 // pass in anonymous function
 $tmp4 = array_map(function (int|float $a): int|float {
