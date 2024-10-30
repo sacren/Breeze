@@ -195,11 +195,17 @@ function addThree(int|float|string $each): int|float
     return $each + 3;
 }
 
+function addFour(int|float|string $each): int|float
+{
+    return $each + 4;
+}
+
 $sum = function (callable $callBack, int|float|string ...$numbers) {
     return array_sum(array_map($callBack, $numbers));
 };
 
 echo $sum('addThree', 2, 3, 28, '1') . '<br>'; // 46
+echo $sum('addFour', 2, 3, 28, '1') . '<br>'; // 50
 
 // pass in anonymous function
 $tmp4 = array_map(function (int|float $a): int|float {
