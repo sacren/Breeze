@@ -1,5 +1,6 @@
-<x-layout></x-layout>
-<?php
+<x-layout>
+
+@php
 
 // integers 0, -0 = false
 // floats 0.0, -0.0 = false
@@ -90,3 +91,7 @@ $isComplete = false;
 var_dump($isComplete);
 echo '<br>';
 var_dump(is_bool($isComplete));
+
+@endphp
+
+</x-layout>
