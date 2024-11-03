@@ -1,5 +1,8 @@
-<x-layout></x-layout>
-<?php
+<x-layout>
+
+<x-slot:title>Integer</x-slot:title>
+
+@php
 
 // integer max, min and size, architecture dependent
 echo PHP_INT_MAX . '<br>';
@@ -72,3 +75,7 @@ echo '<br>';
 $number = (int) '200_000_000'; // 200
 var_dump($number);
 echo '<br>';
+
+@endphp
+
+</x-layout>
