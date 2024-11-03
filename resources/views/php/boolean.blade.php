@@ -1,5 +1,7 @@
 <x-layout>
 
+<x-slot:title>Boolean</x-slot>
+
 @php
 
 // integers 0, -0 = false
