@@ -1,3 +1,7 @@
+@php
+declare(strict_types=1);
+@endphp
+
 <x-layout>
 
 <x-slot:title>Integer</x-slot:title>
