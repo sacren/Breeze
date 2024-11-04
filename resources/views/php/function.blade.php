@@ -3,7 +3,9 @@ declare(strict_types=1);
 @endphp
 
 <x-layout>
+
 <x-slot:title>Function</x-slot>
+
 @php
 
 // declare function foo
@@ -200,12 +202,24 @@ function addFour(int|float|string $each): int|float
     return $each + 4;
 }
 
+// use callable, it can be a normal function
 $sum = function (callable $callBack, int|float|string ...$numbers) {
     return array_sum(array_map($callBack, $numbers));
 };
 
 echo $sum('addThree', 2, 3, 28, '1') . '<br>'; // 46
 echo $sum('addFour', 2, 3, 28, '1') . '<br>'; // 50
+
+// use closure, it must be an anonymous function
+$sum1 = function (closure $callBack, int|float|string ...$numbers) {
+    return array_sum(array_map($callBack, $numbers));
+};
+
+echo $sum1(function ($a) {
+    return $a + 3;
+}, 2, 3, 28, '1') . '<br>'; // 46
+
+echo $sum1(fn($a) => $a + 4, 2, 3, 28, '1') . '<br>'; // 50
 
 // pass in anonymous function
 $tmp4 = array_map(function (int|float $a): int|float {
@@ -250,4 +264,5 @@ print_r($tmp9);
 echo '</pre>';
 
 @endphp
+
 </x-layout>
